@@ -6,10 +6,10 @@ from fastapi import FastAPI, Body
 
 
 app = FastAPI()
-ORGANIZATION_NAME = os.getenv("ORGANIZATION_NAME")
-RENDERS_DIRECTORY = os.getenv("RENDERS_DIRECTORY")
+ORGANIZATION_NAME = os.environ["ORGANIZATION_NAME"]
+RENDERS_DIRECTORY = os.environ["RENDERS_DIRECTORY"]
 
-g = Github(os.getenv("ACCESS_TOKEN"))
+g = Github(os.environ["ACCESS_TOKEN"])
 
 
 def extract_contents(filename: str):
